@@ -1,4 +1,4 @@
-let nickname = "Luquinhas"
+let nickname = "Hero"
 let exp = 10500
 
 switch(true){
