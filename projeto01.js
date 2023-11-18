@@ -1,35 +1,41 @@
-let nickname = "Hero"
-let exp = 10500
-
-switch(true){
-    case (exp <= 1000):
-      console.log(`O Herói de nome ${nickname} está no nível Ferro.`)
-      break
-
-    case (exp >= 1001) && (exp <= 2000):
-        console.log(`O Herói de nome ${nickname} está no nível Bronze.`)
-        break  
-    
-    case (exp >= 2001) && (exp <= 6000):
-        console.log(`O Herói de nome ${nickname} está no nível Prata.`)
-        break
-    
-    case (exp >= 6001) && (exp <= 7000):
-        console.log(`O Herói de nome ${nickname} está no nível Ouro.`)
-        break
-    
-    case (exp >= 7001) && (exp <= 8000):
-        console.log(`O Herói de nome ${nickname} está no nível Platina.`)
-        break
-    
-    case (exp >= 8001) && (exp <= 9000):
-        console.log(`O Herói de nome ${nickname} está no nível Ascendente.`)
-        break
-    
-    case (exp >= 9001) && (exp <= 10000):
-        console.log(`O Herói de nome ${nickname} está no nível Imortal.`)
-        break
-    
-    default:
-        console.log(`O Herói de nome ${nickname} está no nível Radiante.`)
+class hero {
+    constructor(nome, idade, tipo) {
+        this.nome = nome
+        this.idade = idade
+        this.tipo = tipo
     }
+
+    attack() {
+        const ataque = this.atacar()
+        console.log(`O ${this.tipo} atacou usando ${ataque}!`)
+    }
+
+    atacar() {
+        switch (this.tipo) {
+            case "guerreiro":
+                return "espada";
+                break
+            case "mago":
+                return "magia"
+                break
+            case "monge":
+                return "artes marciais"
+                break
+            case "ninja":
+                return "shuriken"
+                break
+            default:
+                return "E.R.R.O."
+        }
+    }
+}
+
+let guerreiro = new hero ("Golden Warrior", 40, "guerreiro")
+let mago = new hero ("Dark Mage", 25, "mago")
+let monge = new hero ("White Monk", 50, "monge")
+let ninja = new hero ("Hidden Ninja", 35, "ninja")
+
+guerreiro.attack()
+mago.attack()
+monge.attack()
+ninja.attack()
